@@ -13,8 +13,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $^
 
-%.o: %.c
-	$(CC) $(CFLAGS) -o $@ -c $^
+%.o: %.c $(INCLUDES)
+	$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
 	rm -f $(OBJS)
