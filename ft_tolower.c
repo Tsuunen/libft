@@ -6,11 +6,11 @@
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:13:34 by relaforg          #+#    #+#             */
-/*   Updated: 2025/10/27 15:13:36 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/10/27 15:20:35 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c + 32);

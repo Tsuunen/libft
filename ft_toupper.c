@@ -6,11 +6,11 @@
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:13:44 by relaforg          #+#    #+#             */
-/*   Updated: 2025/10/27 15:13:48 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/10/27 15:20:47 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (c - 32);
