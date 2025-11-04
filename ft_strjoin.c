@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 22:40:24 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/04 14:10:31 by relaforg         ###   ########.fr       */
+/*   Created: 2025/11/04 16:00:57 by relaforg          #+#    #+#             */
+/*   Updated: 2025/11/04 16:15:16 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
+	char	*out;
 
-	// if (!dest && !src)
-	// 	return (dest);
-	i = 0;
-	while (i < n)
-	{
-		((char *)dest)[i] = ((char *)src)[i];
-		i++;
-	}
-	return (dest);
+	out = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, 1);
+	if (!out)
+		return (NULL);
+	ft_strlcpy(out, s1, ft_strlen(s1) + 1);
+	ft_strlcat(out, s2, ft_strlen(s1) + ft_strlen(s2) + 1);
+	return (out);
 }

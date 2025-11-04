@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 22:40:24 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/04 14:10:31 by relaforg         ###   ########.fr       */
+/*   Created: 2025/11/04 14:20:37 by relaforg          #+#    #+#             */
+/*   Updated: 2025/11/04 14:25:45 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strdup(const char *s)
 {
-	size_t	i;
+	char	*out;
 
-	// if (!dest && !src)
-	// 	return (dest);
-	i = 0;
-	while (i < n)
-	{
-		((char *)dest)[i] = ((char *)src)[i];
-		i++;
-	}
-	return (dest);
+	out = malloc((ft_strlen(s) + 1) * sizeof(*out));
+	if (!out)
+		return (NULL);
+	ft_strlcpy(out, s, ft_strlen(s) + 1);
+	return (out);
 }

@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 22:40:24 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/04 14:10:31 by relaforg         ###   ########.fr       */
+/*   Created: 2025/11/04 13:50:09 by relaforg          #+#    #+#             */
+/*   Updated: 2025/11/04 14:19:48 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	i;
+	void		*out;
+	long int	len;
 
-	// if (!dest && !src)
-	// 	return (dest);
-	i = 0;
-	while (i < n)
-	{
-		((char *)dest)[i] = ((char *)src)[i];
-		i++;
-	}
-	return (dest);
+	len = nmemb * size;
+	if (len > 2147483647)
+		return (NULL);
+	out = malloc(len);
+	if (!out)
+		return (NULL);
+	ft_memset(out, 0, len);
+	return (out);
 }
