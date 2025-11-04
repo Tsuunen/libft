@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 09:20:54 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/03 16:20:56 by relaforg         ###   ########.fr       */
+/*   Created: 2025/11/03 12:56:59 by relaforg          #+#    #+#             */
+/*   Updated: 2025/11/03 13:14:13 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
-
-	if (dsize == 0)
-		return (ft_strlen(src));
-	i = 0;
-	while (i < dsize - 1 && src[i])
+	while (*s != (char) c)
 	{
-		dst[i] = src[i];
-		i++;
+		if (!*s)
+			return (NULL);
+		s++;
 	}
-	dst[i] = 0;
-	return (ft_strlen(src));
+	return ((char *) s);
 }

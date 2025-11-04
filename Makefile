@@ -1,8 +1,8 @@
 CC = cc
-CFLAGS = -Werror -Wextra -Wall
+CFLAGS = -Werror -Wextra -Wall -MD
 NAME = libft.a
-INCLUDES = libft.h
 OBJS = $(SRCS:.c=.o)
+DEPS = $(SRCS:.c=.d)
 SRCS = ft_isalpha.c\
 	   ft_isdigit.c\
 	   ft_isalnum.c\
@@ -15,18 +15,26 @@ SRCS = ft_isalpha.c\
 	   ft_memmove.c\
 	   ft_toupper.c\
 	   ft_tolower.c\
-	   ft_strlcpy.c
+	   ft_strlcpy.c\
+	   ft_strlcat.c\
+	   ft_strchr.c\
+	   ft_strrchr.c\
+	   ft_strncmp.c\
+	   ft_memchr.c\
+	   ft_memcmp.c\
+	   ft_strnstr.c\
+	   ft_atoi.c
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $^
 
-%.o: %.c $(INCLUDES)
+%.o: %.c Makefile
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(DEPS)
 
 fclean: clean
 	rm -f $(NAME)
@@ -34,3 +42,5 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+
+-include $(DEPS)
