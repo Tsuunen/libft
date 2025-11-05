@@ -6,7 +6,7 @@
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 22:40:24 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/04 14:10:31 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/11/05 14:55:11 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
-	// if (!dest && !src)
-	// 	return (dest);
+	if (!dest && !src)
+		return (dest);
 	i = 0;
 	while (i < n)
 	{

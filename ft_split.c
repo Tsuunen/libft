@@ -6,7 +6,7 @@
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 09:25:45 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/05 14:09:08 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/11/05 15:06:55 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,19 @@ static int	ft_count_words(char *tmp, char c)
 	return (nb);
 }
 
+static void	fill_out(int nb, char **out, int i, char *tmp)
+{
+	out[nb] = NULL;
+	while (nb-- > 0)
+	{
+		while (!*(tmp + i))
+			i--;
+		while (i >= 0 && *(tmp + i))
+			i--;
+		out[nb] = ft_strdup(tmp + i + 1);
+	}
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**out;
@@ -50,15 +63,7 @@ char	**ft_split(char const *s, char c)
 		free(tmp);
 		return (NULL);
 	}
-	out[nb] = NULL;
-	while (nb-- > 0)
-	{
-		while (!*(tmp + i))
-			i--;
-		while (i >= 0 && *(tmp + i))
-			i--;
-		out[nb] = ft_strdup(tmp + i + 1);
-	}
+	fill_out(nb, out, i, tmp);
 	free(tmp);
 	return (out);
 }

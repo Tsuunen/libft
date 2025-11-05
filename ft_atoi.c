@@ -6,7 +6,7 @@
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 17:48:07 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/04 12:04:57 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/11/05 15:00:41 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ static int	ft_isspace(char c)
 	return ((c >= 9 && c <= 13) || c == ' ');
 }
 
-int		ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
-	int	sign;
+	int			sign;
 	long int	out;
 
 	sign = 1;

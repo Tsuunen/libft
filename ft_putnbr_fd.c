@@ -6,7 +6,7 @@
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 14:41:40 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/05 14:51:48 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/11/05 15:02:54 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,3 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd(c, fd);
 	}
 }
-

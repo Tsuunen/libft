@@ -6,13 +6,13 @@
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 13:31:31 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/05 09:31:08 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/11/05 15:01:12 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 

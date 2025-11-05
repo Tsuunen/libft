@@ -6,13 +6,13 @@
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 15:13:35 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/04 13:19:09 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/11/05 15:00:54 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	while (n)
 	{

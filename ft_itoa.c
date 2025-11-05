@@ -6,7 +6,7 @@
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 11:59:39 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/05 12:33:26 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/11/05 15:02:21 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	get_digit_number(long int nbr)
 {
-	int size;
+	int	size;
 
 	size = 0;
 	if (nbr == 0)
@@ -57,11 +57,3 @@ char	*ft_itoa(int n)
 	}
 	return (out);
 }
-
-// int	main(void)
-// {
-// 	char *t = ft_itoa(0);
-// 	__builtin_printf("%s\n", t);
-// 	free(t);
-// 	return (0);
-// }

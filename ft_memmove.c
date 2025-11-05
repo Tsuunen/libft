@@ -6,7 +6,7 @@
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 17:01:22 by relaforg          #+#    #+#             */
-/*   Updated: 2025/08/27 18:37:37 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/11/05 14:56:48 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
-	if (!dest || !src || (dest == src) || n == 0)
-		return (dest);
+	if (!dest && !src)
+		return (NULL);
 	i = 0;
 	if ((char *) src < (char *) dest)
 	{
