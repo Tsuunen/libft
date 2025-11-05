@@ -6,7 +6,7 @@
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 13:31:31 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/03 13:39:02 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/11/05 09:31:08 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 	{
 		if ((unsigned char) s1[i] != (unsigned char) s2[i])
 			return ((unsigned char) s1[i] - (unsigned char) s2[i]);
-		if ((unsigned char) s1[i] == 0 || (unsigned char) s2[i] == 0)
+		if ((unsigned char) s1[i] == 0 && (unsigned char) s2[i] == 0)
 			return (0);
 		i++;
 	}

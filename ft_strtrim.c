@@ -6,7 +6,7 @@
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:17:06 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/04 17:30:10 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/11/05 13:26:17 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	const char	*end;
 
 	if (*s1 == 0)
-		return (ft_calloc(1, 1));
+		return (ft_calloc(1, sizeof(char)));
 	while (*s1 && is_in_set(*s1, set))
 		s1++;
 	start = s1;
@@ -38,23 +38,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (*s1)
 	{
 		if (!is_in_set(*s1, set))
-			end = s1;
+			end = s1 + 1;
 		s1++;
 	}
-	if (end == start)
-		out = ft_calloc(1, 1);
-	else
-		out = ft_calloc(end - start + 2, 1);
+	out = ft_calloc(end - start + 1, sizeof(*out));
 	if (!out)
 		return (NULL);
-	ft_strlcpy(out, start, end - start + 2);
+	ft_strlcpy(out, start, end - start + 1);
 	return (out);
 }
-
-// int	main(void)
-// {
-// 	char *s = ft_strtrim("   xxx   xxx", " x");
-// 	__builtin_printf("%s\n", s);
-// 	free(s);
-// 	return (0);
-// }
