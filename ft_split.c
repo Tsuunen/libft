@@ -6,64 +6,106 @@
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 09:25:45 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/05 15:06:55 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/11/05 16:46:56 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count_words(char *tmp, char c)
+static char	*ft_strndup(char *src, int n)
 {
-	int	i;
-	int	nb;
+	char	*output;
+	int		i;
 
+	output = malloc(n + 1);
+	if (!output)
+		return (0);
 	i = 0;
-	nb = 0;
-	if (*tmp)
-		nb++;
-	while (*(tmp + i))
+	while (src[i] && i < n)
 	{
-		if (*(tmp + i) == c)
-			*(tmp + i) = 0;
-		else if (i > 0 && *(tmp + i) && !*(tmp + i - 1))
-			nb++;
+		output[i] = src[i];
 		i++;
 	}
-	return (nb);
+	output[i] = 0;
+	return (output);
 }
 
-static void	fill_out(int nb, char **out, int i, char *tmp)
+static int	count_words(char *str, char c)
 {
-	out[nb] = NULL;
-	while (nb-- > 0)
+	int	count;
+	int	i;
+	int	new_word;
+
+	count = 0;
+	i = 0;
+	new_word = 1;
+	while (str[i])
 	{
-		while (!*(tmp + i))
-			i--;
-		while (i >= 0 && *(tmp + i))
-			i--;
-		out[nb] = ft_strdup(tmp + i + 1);
+		if (str[i] == c)
+			new_word = 1;
+		else
+		{
+			if (new_word)
+			{
+				new_word = 0;
+				count++;
+			}
+		}
+		i++;
 	}
+	return (count);
+}
+
+static void	free_out(char **out, int i)
+{
+	while (i >= 0)
+	{
+		free(out[i]);
+		i--;
+	}
+}
+
+static int	manage_split(int wc, char *str, char c, char **out)
+{
+	int		i;
+	char	*start;
+
+	i = 0;
+	while (i < wc)
+	{
+		if (*str == c)
+			str++;
+		else
+		{
+			start = str;
+			while (*str != c && *str)
+				str++;
+			out[i] = ft_strndup(start, str - start);
+			if (!out[i])
+			{
+				free_out(out, i);
+				return (1);
+			}
+			i++;
+		}
+	}
+	return (0);
 }
 
 char	**ft_split(char const *s, char c)
 {
+	int		word_count;
 	char	**out;
-	char	*tmp;
-	int		i;
-	int		nb;
 
-	tmp = ft_strtrim(s, (char []){c, '\0'});
-	if (!tmp)
-		return (NULL);
-	i = ft_strlen(tmp);
-	nb = ft_count_words(tmp, c);
-	out = ft_calloc(nb + 1, sizeof(*out));
+	word_count = count_words((char *) s, c);
+	out = malloc(sizeof(*out) * (word_count + 1));
 	if (!out)
+		return (0);
+	out[word_count] = NULL;
+	if (manage_split(word_count, (char *) s, c, out))
 	{
-		free(tmp);
+		free(out);
 		return (NULL);
 	}
-	fill_out(nb, out, i, tmp);
-	free(tmp);
 	return (out);
 }

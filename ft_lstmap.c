@@ -6,7 +6,7 @@
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 16:02:26 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/05 16:09:59 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/11/05 16:51:16 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,26 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new;
+	t_list	*node;
+	void	*new_content;
 
-	(void) del;
 	new = NULL;
 	while (lst)
 	{
-		ft_lstadd_back(&new, ft_lstnew(f(lst->content)));
+		new_content = f(lst->content);
+		if (!new_content)
+		{
+			ft_lstclear(&new, del);
+			return (new);
+		}
+		node = ft_lstnew(new_content);
+		if (!node)
+		{
+			del(new_content);
+			ft_lstclear(&new, del);
+			return (new);
+		}
+		ft_lstadd_back(&new, node);
 		lst = lst->next;
 	}
 	return (new);
