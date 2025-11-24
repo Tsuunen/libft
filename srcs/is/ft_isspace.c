@@ -1,19 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: relaforg <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/06 13:15:03 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/24 10:21:09 by relaforg         ###   ########.fr       */
+/*   Created: 2025/11/24 10:30:36 by relaforg          #+#    #+#             */
+/*   Updated: 2025/11/24 10:30:43 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-
-# include <stdarg.h>
-
-
-#endif
+int	ft_isspace(char c)
+{
+	return ((c >= 9 && c <= 13) || c == ' ');
+}

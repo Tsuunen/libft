@@ -6,7 +6,7 @@
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 16:45:04 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/24 10:23:30 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/11/24 11:13:07 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <limits.h>
 
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
 # define OPEN_MAX 1024
 # define LOW_HEX "0123456789abcdef"
 # define UP_HEX "0123456789ABCDEF"
@@ -33,6 +32,7 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
+int		ft_isspace(char c);
 
 // --- Memory Manipulation ---
 void	ft_bzero(void *s, size_t n);
@@ -54,6 +54,7 @@ char	*ft_itoa_base(int nbr, char *base);
 char	*ft_ltoa_base(long n, char *base);
 char	*ft_utoa_base(unsigned int n, char *base);
 char	*ft_ultoa_base(unsigned long n, char *base);
+long	ft_strtol(char *s, char **end);
 
 // --- String Manipulation ---
 size_t	ft_strlen(const char *s);
