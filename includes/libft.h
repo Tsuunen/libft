@@ -6,7 +6,7 @@
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 16:45:04 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/24 11:13:07 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/11/24 14:38:22 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ char	*ft_ltoa_base(long n, char *base);
 char	*ft_utoa_base(unsigned int n, char *base);
 char	*ft_ultoa_base(unsigned long n, char *base);
 long	ft_strtol(char *s, char **end);
+int		ft_strtoi(char *s, char **end);
 
 // --- String Manipulation ---
 size_t	ft_strlen(const char *s);
