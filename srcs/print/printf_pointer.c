@@ -6,12 +6,11 @@
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 13:11:37 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/08 11:24:22 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/11/24 10:22:06 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include "../include/ft_printf.h"
+#include "libft.h"
 
 int	printf_pointer(void *ptr, char *buf)
 {

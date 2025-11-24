@@ -6,11 +6,11 @@
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 10:17:33 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/11 15:17:05 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/11/24 10:21:49 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
+#include "libft.h"
 
 int	printf_int(int nbr, char *buf)
 {

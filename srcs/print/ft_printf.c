@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 15:21:56 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/13 11:59:56 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/11/24 10:21:39 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include "../include/ft_printf.h"
-#include "../libft/libft.h"
+#include "libft.h"
 
 int	manage_option(va_list ap, char opt, char *buf)
 {

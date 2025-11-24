@@ -6,11 +6,11 @@
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 12:36:19 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/11 15:18:37 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/11/24 10:21:58 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "libft.h"
 
 int	printf_percent(char *buf)
 {

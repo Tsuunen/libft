@@ -6,12 +6,11 @@
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 12:04:46 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/08 10:53:54 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/11/24 10:22:29 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include "../include/ft_printf.h"
+#include "libft.h"
 
 int	printf_xint(int nbr, char *buf)
 {

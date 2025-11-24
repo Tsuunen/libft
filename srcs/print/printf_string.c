@@ -6,12 +6,11 @@
 /*   By: relaforg <relaforg@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 09:19:54 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/11 15:16:45 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/11/24 10:22:15 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include "../libft/libft.h"
+#include "libft.h"
 
 int	printf_string(char *str, char *buf)
 {

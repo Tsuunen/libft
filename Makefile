@@ -1,9 +1,11 @@
 CC := cc
-CFLAGS := -Werror -Wextra -Wall -MD
+INCLUDES := -Iincludes
+CFLAGS := -Werror -Wextra -Wall -MD $(INCLUDES)
 NAME := libft.a
-MODE ?= mandatory
+BUILD_DIR := .build
 
-SRCS = ft_isalpha.c\
+VPATH := srcs/gnl:srcs/is:srcs/lst:srcs/mem:srcs/print:srcs/str:srcs/to
+SRCS := ft_isalpha.c\
 	   ft_isdigit.c\
 	   ft_isalnum.c\
 	   ft_isprint.c\
@@ -36,47 +38,54 @@ SRCS = ft_isalpha.c\
 	   ft_putchar_fd.c\
 	   ft_putstr_fd.c\
 	   ft_putendl_fd.c\
-	   ft_putnbr_fd.c
+	   ft_putnbr_fd.c\
+	   ft_lstnew.c\
+	   ft_lstadd_front.c\
+	   ft_lstsize.c\
+	   ft_lstlast.c\
+	   ft_lstadd_back.c\
+	   ft_lstdelone.c\
+	   ft_lstclear.c\
+	   ft_lstiter.c\
+	   ft_lstmap.c\
+	   ft_realloc.c\
+	   ft_printf.c\
+	   printf_char.c\
+	   printf_int.c\
+	   printf_percent.c\
+	   printf_pointer.c\
+	   printf_string.c\
+	   printf_uint.c\
+	   printf_xint.c\
+	   printf_Xint.c\
+	   ft_itoa_base.c\
+	   ft_ltoa_base.c\
+	   ft_ultoa_base.c\
+	   ft_utoa_base.c\
+	   ft_utoa.c
 
-SRCS_BONUS := ft_lstnew_bonus.c\
-			 ft_lstadd_front_bonus.c\
-			 ft_lstsize_bonus.c\
-			 ft_lstlast_bonus.c\
-			 ft_lstadd_back_bonus.c\
-			 ft_lstdelone_bonus.c\
-			 ft_lstclear_bonus.c\
-			 ft_lstiter_bonus.c\
-			 ft_lstmap_bonus.c
-
-ifeq ($(MODE), bonus)
-	SRCS += $(SRCS_BONUS)
-endif
-
-OBJS = $(SRCS:.c=.o)
-DEPS = $(SRCS:.c=.d)
-
-OBJS_BONUS := $(SRCS_BONUS:.c=.o)
-DEPS_BONUS := $(SRCS_BONUS:.c=.d)
+OBJS = $(addprefix $(BUILD_DIR)/, $(SRCS:.c=.o))
+DEPS = $(OBJS:.o=.d)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar rcs $(NAME) $^
+$(NAME): $(BUILD_DIR) $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
-bonus:
-	$(MAKE) MODE=bonus
+$(BUILD_DIR):
+	mkdir -p $(BUILD_DIR)
 
-%.o: %.c Makefile
+$(BUILD_DIR)/%.o: %.c | $(BUILD_DIR)
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
-	rm -f $(OBJS) $(DEPS) $(OBJS_BONUS) $(DEPS_BONUS)
+	rm -f $(OBJS) $(DEPS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
 
 -include $(DEPS)
