@@ -10,6 +10,7 @@ SRCS := ft_isalpha.c\
 	   ft_isalnum.c\
 	   ft_isprint.c\
 	   ft_isascii.c\
+	   ft_isspace.c\
 	   ft_strlen.c\
 	   ft_memset.c\
 	   ft_bzero.c\
@@ -62,7 +63,9 @@ SRCS := ft_isalpha.c\
 	   ft_ltoa_base.c\
 	   ft_ultoa_base.c\
 	   ft_utoa_base.c\
-	   ft_utoa.c
+	   ft_utoa.c\
+	   ft_strtol.c\
+	   ft_strtoi.c
 
 OBJS = $(addprefix $(BUILD_DIR)/, $(SRCS:.c=.o))
 DEPS = $(OBJS:.o=.d)
