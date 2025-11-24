@@ -6,7 +6,7 @@
 /*   By: relaforg <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 10:26:38 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/24 11:11:08 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/11/24 14:37:33 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ long	ft_strtol(char *s, char **end)
 		s++;
 		*end = s;
 	}
-	return (out);
+	return (out * sign);
 }
