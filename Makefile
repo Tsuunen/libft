@@ -65,7 +65,8 @@ SRCS := ft_isalpha.c\
 	   ft_utoa_base.c\
 	   ft_utoa.c\
 	   ft_strtol.c\
-	   ft_strtoi.c
+	   ft_strtoi.c\
+	   ft_toabs.c
 
 OBJS = $(addprefix $(BUILD_DIR)/, $(SRCS:.c=.o))
 DEPS = $(OBJS:.o=.d)
