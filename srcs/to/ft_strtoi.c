@@ -6,7 +6,7 @@
 /*   By: relaforg <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 14:31:35 by relaforg          #+#    #+#             */
-/*   Updated: 2025/11/24 14:37:20 by relaforg         ###   ########.fr       */
+/*   Updated: 2025/11/26 11:42:42 by relaforg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_strtoi(char *s, char **end)
 	while (ft_isdigit(*s))
 	{
 		out = out * 10 + (*s - '0');
-		if ((sign == 1 && out > INT_MAX) || (sign == -1 && -out < INT_MIN))
+		if ((sign == 1 && out > INT_MAX) || (sign == -1 && - out < INT_MIN))
 			return (0);
 		s++;
 		*end = s;
